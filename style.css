@@ -1,0 +1,94 @@
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightyellow;
+    
+}
+
+@font-face {
+    font-family: 'dune-font';
+    src: url(Dune_Rise.ttf);
+}
+
+.title {
+    margin-top: 20px;
+    font-family: 'dune-font';
+    color: black
+;
+}
+.memory-game {
+   width: 640px;
+   height: 640px;
+   margin: auto;
+   display: flex;
+   flex-wrap: wrap;
+   perspective: 1000px;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card:active {
+    transform: scale(.95);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #620903;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+    padding: 0;
+}
+img {
+    width: 100px;
+}
+
+#restart-button {
+    padding: 15px 20px;
+    background-color:  #620903; /* Green background color */
+    border: none; /* Remove default border */
+    color: #F5EBA4; /* Text color */
+    text-align: center; /* Center text horizontally */
+    text-decoration: none; /* Remove default underline */
+    display: inline-block; /* Display as inline block to adjust width to content */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px; /* Add border-radius for rounded corners */
+    transition: background-color 0.3s; /* Add smooth transition for background color change */
+    font-family:'dune-font';
+  }
+
+
+
+
+#restart-button:hover {
+    background-color: #3D0C02; /* Darker green background color on hover */
+  }
